@@ -2,4 +2,15 @@ PHP-HTTP-Audiofile-streamer is a PHP based HTTP-Streaming server for MP3 files.
 HTTP-Streams are working with MacOS 10.6, iOS 3.x, 4.x. VLC Player support the basics. Flash Player 10.1 also support HTTP-Streaming.
 PHP-HTTP-Audiofile-streamer only support Streaming a ready MP3-File (no live streaming).
 
-This Software is LGPL: http://www.gnu.org/licenses/lgpl.html 
+This Software is LGPL: http://www.gnu.org/licenses/lgpl.html
+
+Install: 
+This is not ready for productive use! Only test and development Version!
+
+1. Copy files to an Folder on your PHP-Server.
+2. Open config file
+	$extern_archive_path shold be the URL where this file is located.
+	
+3. 	-upload an MP3-File on upload.php
+	-hope everything works
+	-get streamURL and try
