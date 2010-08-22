@@ -134,9 +134,47 @@ $dz = fopen($archive_path."/".$current_file_dir.'/'.'index.m3u8',w);
 fwrite($dz,$m3u8_file);
 fclose($dz);
 
-//echo stream index URL
-echo("Upload completet: <a href=\"http://".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."\">Stream URL</a>");
+//echo / save stream index URL
+$streanurlcontent = "Upload completet: <a href=\"http://".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."\">Stream URL</a>";
 //delete original MP3-file
 unlink($upload_dir."/".$current_file_dir.".mp3");
 
 ?>
+<html>
+	<head>
+	<style type="text/css">
+
+	#content {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -25px;
+		padding: 10px;
+		border-color: #00ffc5;
+		border-style: solid;
+		border-width: 1px;
+		background-color: #ddfff2;
+		margin-left: -150px;
+		width: 300px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-box-shadow: 0px 2px 8px #666666;
+    	-moz-box-shadow: 0px 2px 8px #666666;
+		box-shadow: 0px 2px 8px #666666;
+	}
+
+	body {
+		background-color: #f6fff8;
+	}
+
+	</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HTTP-Stream - URL</title>
+	</head>
+	<body>
+		<div id="content">
+			<center><?=$streanurlcontent;?></center>
+		</div>
+	</body>
+</html>
+
