@@ -52,7 +52,7 @@ $mp3 = new mp3($path);
 
 
 
-
+//m3u8 header
 $m3u8_file = "#EXTM3U 
 #EXT-X-MEDIA-SEQUENCE:0 
 #EXT-X-TARGETDURATION:".$stuckgrosse."
@@ -83,10 +83,10 @@ while($weiter==1)
 		
 		
 		//File schreiben
-		
-		$m3u8_file = $m3u8_file."#EXTINF:".$stuckgrosse.", 
+		else {
+			$m3u8_file = $m3u8_file."#EXTINF:".$stuckgrosse.", 
 http://".$extern_archive_path."/".$current_file_dir.'/'.'file'.$position.'.mp3
-';
+';}
 		
 		
 		$position = $position + $stuckgrosse;
