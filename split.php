@@ -30,16 +30,38 @@ else $current_file_dir = date("Y-m-d-H-i").$filename;
 mkdir($archive_path."/".$current_file_dir);
 
 
-//if ($_FILES['file']) echo("da is was: ".$_FILES['file']['error']."<br>");
 
 //test move uploadet file and move it
 if(move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir."/".$current_file_dir.".mp3")) {
     echo "Upload succeded";
 } else{
     //error
-    echo "There was an error uploading the file, please try again!";
+    echo "There was an error uploading the file, please try again!<br>";
     //remove dir becouse it isn't needed anymore (becouse is no content if upload failed)
     rmdir($archive_path."/".$current_file_dir);
+    
+   	//echo Upload Error
+   	if(!$_FILES['file'])
+   	{
+   		$upload_error = "No file was uploaded.";
+   	}
+   	else
+   	{
+	   	switch($_FILES['file']['error'])
+	   	{
+	   		case 0: $upload_error = "here is no error, the file uploaded with success.";
+	   		case 1: $upload_error = "The uploaded file exceeds the upload_max_filesize directive in php.ini.";
+	   		case 2: $upload_error = "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.";
+	   		case 3: $upload_error = "The uploaded file was only partially uploaded.";
+	   		case 4: $upload_error = "No file was uploaded.";
+	   		case 5: $upload_error = "-";
+	   		case 6: $upload_error = "Missing a temporary folder.";
+	   		case 7: $upload_error = "Failed to write file to disk.";
+	   		case 8: $upload_error = "A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with phpinfo() may help.";
+	   		default: $upload_error = "unknown upload error";
+	   	}
+   	}
+   	echo("Upload Error: ".$upload_error."<br>");
     //die
     die();
 }
