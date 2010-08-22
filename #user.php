@@ -1,0 +1,4 @@
+<?
+$rightusername = "root";
+$rightpassword = "tuxx";
+?>

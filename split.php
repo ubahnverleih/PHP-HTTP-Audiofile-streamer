@@ -1,4 +1,5 @@
 <?
+include("#auth.php");
 include("./mp3lib.php");
 include("./config.php");
 
