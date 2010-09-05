@@ -1,4 +1,5 @@
 <?
+error_reporting(1);
 include("#auth.php");
 include("./mp3lib.php");
 include("./config.php");
@@ -34,7 +35,7 @@ mkdir($archive_path."/".$current_file_dir);
 
 //test move uploadet file and move it
 if(move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir."/".$current_file_dir.".mp3")) {
-    echo "Upload succeded";
+    //
 } else{
     //error
     echo "There was an error uploading the file, please try again!<br>";
