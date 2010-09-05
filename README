@@ -8,9 +8,8 @@ Install:
 This is not ready for productive use! Only test and development Version!
 
 1. Copy files to an Folder on your PHP-Server.
-2. Open config.php file
-	$extern_archive_path shold be the URL where this file is located.
-4. Open #user.php and change username and password!
+2. Give write Access to #user.php, config.php and the dirs upload and archive
+4. open the dir in your browser and configure the setup
 	
 3. 	-upload an MP3-File on upload.php
 	-hope everything works

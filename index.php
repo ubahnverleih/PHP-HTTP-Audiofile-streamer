@@ -1,9 +1,23 @@
 <?
+include_once('functions.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
+
+//check for #user file. no userfile = redirect to setup
+if (filesize("#user.php")<1)
+{
+	header("Location: ./setup.php");
+	die();
+}
+
+//authorise and set session and redirect
 if (($username)&&($password))
 {
 	include("#user.php");
+	//decode password
+	$rightusername = decodeuserdata($rightusername);
+	$rightpassword = decodeuserdata($rightpassword);
+	
 	if(($username==$rightusername)&&($password==$rightpassword))
 	{
 		session_start();
@@ -13,12 +27,19 @@ if (($username)&&($password))
 	}
 }
 
+//check session and redirect
 session_start();
 if($_SESSION['auth'] == 1)
 {
 	header("Location: ./upload.php");
 	die();
 }
+
+
+
+
+
+
 
 
 

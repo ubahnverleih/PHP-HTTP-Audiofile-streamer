@@ -1,4 +1,0 @@
-<?
-$rightusername = "root";
-$rightpassword = "tuxx";
-?>
