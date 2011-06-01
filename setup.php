@@ -298,7 +298,13 @@ class SaveConfig
 		margin-top: 20px;
 		margin-bottom: 20px;
 		padding: 10px;
-		border-color: #00ffc5;
+		border-color: #00b7c5;
+		background: -webkit-linear-gradient(top, #fff, #00b7c5);
+		background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#00b7c5));
+		background: -moz-linear-gradient(top, #fff, #00b7c5);
+		background: -o-linear-gradient(top, #fff, #00b7c5);
+		background: -ms-linear-gradient(top, #fff, #00b7c5);
+		background: linear-gradient(top, #fff, #00b7c5);
 		border-style: solid;
 		border-width: 1px;
 		background-color: #ddfff2;

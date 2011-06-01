@@ -137,6 +137,11 @@ $dz = fopen($archive_path."/".$current_file_dir.'/'.'index.m3u8',w);
 fwrite($dz,$m3u8_file);
 fclose($dz);
 
+//write empty index.html file
+$dz = fopen($archive_path."/".$current_file_dir.'/'.'index.html',w);
+fwrite($dz,'');
+fclose($dz);
+
 //echo / save stream index URL
 $streanurlcontent = "Upload completet: <a href=\"".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."\">Stream URL</a><br><audio src='".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."' controls='controls'>
 Your browser does not support the HTML5 audio element.
@@ -155,7 +160,13 @@ unlink($upload_dir."/".$current_file_dir.".mp3");
 		top: 50%;
 		margin-top: -25px;
 		padding: 10px;
-		border-color: #00ffc5;
+		border-color: #00b7c5;
+		background: -webkit-linear-gradient(top, #fff, #00b7c5);
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#00b7c5));
+		background: -moz-linear-gradient(top, #fff, #00b7c5);
+		background: -o-linear-gradient(top, #fff, #00b7c5);
+		background: -ms-linear-gradient(top, #fff, #00b7c5);
+		background: linear-gradient(top, #fff, #00b7c5);
 		border-style: solid;
 		border-width: 1px;
 		background-color: #ddfff2;

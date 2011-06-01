@@ -13,10 +13,16 @@ include("./config.php");
 		top: 50%;
 		margin-top: -75px;
 		padding: 10px;
-		border-color: #00ffc5;
 		border-style: solid;
 		border-width: 1px;
-		background-color: #ddfff2;
+		/*background-color: #ddfff2;*/
+		border-color: #00b7c5;
+		background: -webkit-linear-gradient(top, #fff, #00b7c5);
+		background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#00b7c5));
+		background: -moz-linear-gradient(top, #fff, #00b7c5);
+		background: -o-linear-gradient(top, #fff, #00b7c5);
+		background: -ms-linear-gradient(top, #fff, #00b7c5);
+		background: linear-gradient(top, #fff, #00b7c5);
 		margin-left: -175px;
 		width: 350px;
 		-webkit-border-radius: 10px;
@@ -37,10 +43,12 @@ include("./config.php");
 	<body>
 		<form method="post" action="split.php" enctype="multipart/form-data" id="formbody">
 			<table>
-				<tr><td>Name:</td><td> <input type="text" name="filename"/></td></tr>
+				<tr><td>Name:</td><td> <input type="text" size="45" name="filename"/></td></tr>
 				<tr><td>Part-length: </td><td> <input type="text" name="partlenght" value="<?=$default_mp3_part_length;?>" size="3" /> seconds</td></tr>
 				<tr><td>File: </td><td> <input type="file" name="file" accept="audio/x-mpeg" maxlength="16000000"></td></tr>
 				<tr><td><input value="Upload" type="submit"></td><td></td></tr>
+				<tr><td colspan="2"><hr></td></tr>
+				<tr><td colspan="2"><center><a href="./setup.php">Settings</a> | <a href="./logout.php">Logout</a></center></td></tr>
 			</table>
 		</form>
 	</body>
