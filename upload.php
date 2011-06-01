@@ -38,7 +38,7 @@ include("./config.php");
 		<form method="post" action="split.php" enctype="multipart/form-data" id="formbody">
 			<table>
 				<tr><td>Name:</td><td> <input type="text" name="filename"/></td></tr>
-				<tr><td>Part-length: </td><td> <input type="text" name="partlenght" value="<?=$default_mp3_part_length;?>" size="3" />s</td></tr>
+				<tr><td>Part-length: </td><td> <input type="text" name="partlenght" value="<?=$default_mp3_part_length;?>" size="3" /> seconds</td></tr>
 				<tr><td>File: </td><td> <input type="file" name="file" accept="audio/x-mpeg" maxlength="16000000"></td></tr>
 				<tr><td><input value="Upload" type="submit"></td><td></td></tr>
 			</table>

@@ -11,6 +11,8 @@ $partlenght = $_POST['partlenght'];
 if (!$partlenght) $partlenght = 10;
 
 $filename = $_POST['filename'];
+//filename whitespace fix
+$filename = str_replace(" ","-",$filename);
 
 
 //check for files / dirs with same name
@@ -119,7 +121,7 @@ while($continue_mp3split_loop==1)
 		else {
 			//write file URL to m3u8-index
 			$m3u8_file = $m3u8_file."#EXTINF:".$partlenght.", 
-http://".$extern_archive_path."/".$current_file_dir.'/'.'file'.$position.'.mp3
+".$extern_archive_path."/".$current_file_dir.'/'.'file'.$position.'.mp3
 ';}
 		
 		//count up the secondcounter for next part
@@ -136,7 +138,9 @@ fwrite($dz,$m3u8_file);
 fclose($dz);
 
 //echo / save stream index URL
-$streanurlcontent = "Upload completet: <a href=\"http://".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."\">Stream URL</a>";
+$streanurlcontent = "Upload completet: <a href=\"".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."\">Stream URL</a><br><audio src='".$extern_archive_path."/".$current_file_dir.'/'.'index.m3u8'."' controls='controls'>
+Your browser does not support the HTML5 audio element.
+</audio>";
 //delete original MP3-file
 unlink($upload_dir."/".$current_file_dir.".mp3");
 

@@ -6,6 +6,7 @@ if (filesize("#user.php")>1)
 	include("#auth.php");
 }
 
+
 include("./config.php");
 include("./#user.php");
 
@@ -28,7 +29,6 @@ if ($_POST['Button_save'] == "Save")
 	
 	
 }
-
 
 
 
@@ -362,21 +362,21 @@ class SaveConfig
 				<li>Dir archive need write access</li>
 				<li>Dir upload need write access</li>
 			</ul>
-			<h2>Userdata</h2>
+			<h2>Usersettings</h2>
 			<table>
 				<tr><td>New Username: </td><td> <input type="text" name="newusername" value="<?=$rightusername;?>"/></td></tr>
 				<tr><td>New Password: </td><td> <input type="password" name="newpassword"/></td></tr>
 				<tr><td>New Password: </td><td> <input type="password" name="newpassword2"/></td></tr>
 			</table>
 			<hr>
-			<h2>Serverdata</h2>
+			<h2>Serversettings</h2>
 			<table>
 				<tr><td>Extern archive path: </td><td> <input type="text" name="externarchivepath" value="<?=$externarchivepath;?>"/></td></tr>
 				<tr><td>archive path: </td><td> <input type="text" name="archivepath" value="<?=$archive_path;?>"/></td></tr>
 				<tr><td>upload path: </td><td> <input type="text" name="uploadpath" value="<?=$upload_dir;?>"/></td></tr>
 			</table>
 			<hr>
-			<h2>Audio-Data</h2>
+			<h2>Audiosettings</h2>
 			<table>
 				<tr><td>Default part length (in seconds): </td><td> <input type="text" name="defaultlength" value="<?=$default_mp3_part_length;?>" size="3"/></td></tr>
 			</table>
